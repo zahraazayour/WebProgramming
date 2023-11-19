@@ -1,0 +1,320 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    
+    <style>
+       body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://wallpapercave.com/wp/wp6135097.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .signup {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            padding: 20px;
+            width: 80%;
+            max-width: 500px; 
+            box-sizing: border-box;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .signup-left,
+        .signup-right {
+            flex: 1;
+            min-width: 45%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .input-cont {
+            position: relative;
+        }
+
+        .input-cont i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 8px;
+            color: #aaa;
+        }
+
+        .input-txt {
+            width: calc(100% - 24px);
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            padding-left: 24px;
+        }
+
+        #togglePassword,
+        #togglecPassword {
+            float: right;
+            cursor: pointer;
+            color: #aaa;
+            margin-top: 8px;
+        }
+
+        .gender {
+            display: flex;
+            gap: 20px;
+        }
+
+        .gender .radio {
+            flex: 1;
+        }
+
+        .button {
+            margin-top: 20px; 
+            background-color: #d798ca;
+            color: #fff;
+            cursor: pointer;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #a04577;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 50px; 
+            height: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup">
+        
+
+        <h2>Signup Form</h2>
+
+        <form id="signup-form" name="signup-form" method="post"   action="writer.php">
+            <div class="signup-left">
+                <!-- Left side of the form -->
+                <label for="un">Username</label>
+                <div class="input-cont">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input id="un" type="text" name="username"  class="input-txt">
+                </div>
+
+                <label for="email">Email Address</label>
+                <div class="input-cont">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <input id="email" type="text" name="email"  class="input-txt">
+                </div>
+
+                <label for="ps">Password</label>
+                <div class="input-cont">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input id="ps" type="password" name="password"  class="input-txt">
+                    <i id="togglePassword" class="fa fa-eye-slash" aria-hidden="true"></i>
+                </div>
+
+                <label for="cps">Confirm Password</label>
+                <div class="input-cont">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input id="cps" type="password" name="cpassword" class="input-txt">
+                    <i id="togglecPassword" class="fa fa-eye-slash" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <div class="signup-right">
+                <!-- Right side of the form -->
+                <div class="name">
+                    <div>
+                        <label for="fn">First Name</label>
+                        <div class="input-cont">
+                            <input id="fn" type="text" name="firstname"  class="input-txt">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="ln">Last Name</label>
+                        <div class="input-cont">
+                            <input id="ln" type="text" name="lastname"  class="input-txt">
+                        </div>
+                    </div>
+                </div>
+
+                <label for="dob">Date of Birth</label>
+                <input type="date" autocomplete="off" id="dob" name="DateOfBirth" value="2003-01-01" min="1950-01-01" max="2014-01-01" spellcheck="false" pattern="\d{2}-\d{2}-\d{4}">
+
+                <label for="gender">Gender</label>
+                <div class="gender" id="gender">
+                    <input type="radio" name="rgender" id="male" value="m">
+                    <label for="male" class="radio male">
+                        <div class="circle"></div>
+                        <span>Male</span>
+                    </label>
+
+                    <input type="radio" name="rgender" id="female" value="f" checked>
+                    <label for="female" class="radio female">
+                        <div class="circle"></div>
+                        <span>Female</span>
+                    </label>
+                </div>
+
+                
+                <button type="submit" class="button">
+                    <a href="loginsignup.html" style="text-decoration: none; color: inherit;">Sign Up</a>
+                </button>
+                <a href="loginsignup.html">Already have an account? Log in!</a>
+            </div>
+        </form>
+
+        <script>
+            function SignUp(){
+                    //to get the input
+                    var form=document.getElementById('signup-form');
+                    var un = document.getElementById('un').value.trim();
+                    var email = document.getElementById('email').value.trim();
+                    var ps = document.getElementById('ps').value.trim();
+                    var cps = document.getElementById('cps').value.trim();
+                    var fn = document.getElementById('fn').value.trim();
+                    var ln = document.getElementById('ln').value.trim();
+                    var male = document.getElementById('male').value.trim();
+                    var female = document.getElementById('female').value.trim();
+
+                    //creating the error message
+                    var error = '';
+
+                    //checking if required fields are empty
+                    if (un === '' ){
+                        error += 'Username is required\n';
+                    }
+                    if( email ==='' ){
+                        error += 'Email is required\n';
+                    }
+                    if(ps ==='' ){
+                        error += 'Password is required\n';
+                    }
+                    if( cps ==='' ) {
+                        error += 'Confirm your password\n';
+                    }
+                    if(fn ==='' ) {
+                        error += 'First name is required\n';
+                    }
+                    if(ln ==='' ) {
+                        error += 'Last name is required\n';
+                    }
+
+                    // Check if passwords match
+                    if (ps !== cps) {
+                        error += 'Passwords do not match\n';
+                    }
+
+
+                    // Check if the email matches the pattern
+                   
+
+                    //checking if the password is strong
+                    if(ps.length<8){
+                        error += 'The password is too short, it must be a min of 8 char\n';
+                    }
+
+                    if(ps.length>12){
+                        error+= 'The password is too long, it must be a max of 12 char\n';
+                    }
+
+                    if (!ps.match(/[a-z]+/)){
+                        error+= 'The password must have at least one lowercase character\n';
+                    }
+                    if (!ps.match(/[A-Z]+/)){
+                        error+= 'The password must have at least one uppercase character\n';
+                    }
+                    if ( (!ps.match(/[0-9]+/)) && (!ps.match(/[$@#&!]+/) ) ) {
+                        error+= 'The password must have at least one number or special character\n';
+                    }
+
+
+                    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(email)) {
+                        error += 'The email is invalid\n';
+                    }
+
+                    //printing the error
+                    if(error != ''){
+                        alert(error);
+                    }
+                    else{
+                        form.submit();
+                    }
+
+                }
+
+                //adding the event listener to toggle the eye
+                togglePassword.addEventListener("click", function () {
+                        // toggle the type attribute
+                        const type = ps.getAttribute("type") === "password" ? "text" : "password";
+                        ps.setAttribute("type", type);
+                        
+                        // toggle the icon
+                        this.classList.toggle("fa-eye");
+                        this.classList.toggle("fa-eye-slash");
+                });
+
+                togglecPassword.addEventListener("click", function () {
+                        // toggle the type attribute
+                        const type = cps.getAttribute("type") === "password" ? "text" : "password";
+                        cps.setAttribute("type", type);
+                        
+                        // toggle the icon
+                        this.classList.toggle("fa-eye");
+                        this.classList.toggle("fa-eye-slash");
+                });
+            // your existing togglePassword and togglecPassword event listeners
+        </script>
+    </div>
+    
+</body>
+
+
+</html>
+
