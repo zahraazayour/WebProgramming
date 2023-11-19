@@ -1,8 +1,10 @@
 <?php
-    session_start();
-    
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: index.html");
+    exit;
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,13 +100,13 @@
         <a class="navbar-logo" href="#">Your Pages</a>
         <ul>
         <li><a href="loginsignup2.html">Logout</a></li>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="welcome.php">Home</a></li>
             <li><a href="mycv.php">CV</a></li>
             <li><a href="Galleryy.php">Gallery</a></li>
             <li><a href="ContactInfo.php">Contact-Information</a></li>
         </ul>
     </div>
-    <a href="loginsignup.html">Logout</a>
+    <a href="index.html">Logout</a>
     <div class="welcome-msg" style="float: right;">
                 <div class="welcome-text" style="display: inline-block;"> 
                     <?php

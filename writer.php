@@ -42,7 +42,7 @@ if (file_exists($usersFile)) {
 foreach ($users as $existingUser) {
     if (isset($existingUser['username']) && isset($existingUser['email']) && ($existingUser['username'] === $newUser['username'] || $newUser['email'] === $existingUser['email'])) {
         echo "User already exists, login if you have an account or use another username and email";
-        echo '<script>window.location.href = "loginsignup.html";</script>';
+        echo '<script>window.location.href = "index.html";</script>';
         exit;
     }
 }
@@ -54,7 +54,7 @@ file_put_contents($usersFile, implode(PHP_EOL, array_map(function ($user) {
 
 $_SESSION["username"] = ucfirst($username);  // Log in the user
 
-header("Location: index.php");  // Redirect to the home page
+header("Location: welcome.php");  // Redirect to the home page
 exit();
 ?>
 

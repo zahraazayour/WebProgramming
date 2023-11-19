@@ -15,13 +15,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($credentials[0], $credentials[2]) && $credentials[0] === $username && $credentials[2] === $password) {
                 $_SESSION["username"] = ucfirst($username);
 
-                header("Location: index.php");
+                header("Location: welcome.php");
                 exit();
             }
         }
     }
 
-    header("Location: index.php");
+    header("Location: welcome.php");
     exit();
 }
 ?>

@@ -146,7 +146,7 @@ if (!isset($_SESSION['username'])) {
         <a class="navbar-logo" href="#">Your Pages</a>
         <ul>
             <li><a href="loginsignup2.html">Logout</a></li>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="welcome.php">Home</a></li>
             <li><a href="mycv.php">CV</a></li>
             <li><a href="Galleryy.php">Gallery</a></li>
             <li><a href="ContactInfo.php">Contact-Information</a></li>
